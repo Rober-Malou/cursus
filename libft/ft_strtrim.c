@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 05:41:32 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/03 15:58:45 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/04 10:53:15 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	f = (ft_strlen(s1) - 1);
 	trim = (char *)ft_calloc(ft_strlen(s1), 1);
 }
+culo 
