@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 05:41:32 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/04 15:48:05 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:54:55 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*end_product(const char *s1, size_t beguining, size_t end)
 	if (end <= 0 || beguining >= ft_strlen(s1))
 		return (ft_strdup(""));
 	trim = (char *)ft_calloc(end + 1, sizeof(char));
-	if (!end)
+	if (!trim)
 		return (NULL);
 	i = 0;
 	while (i < end)
