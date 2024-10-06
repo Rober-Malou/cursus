@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:55:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/04 14:25:23 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:48:00 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,4 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
+char	**ft_split(char const *s, char c);

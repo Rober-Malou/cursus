@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 12:21:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/04 14:24:24 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:48:04 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strdup(const char *s)
 
 	c = ft_calloc(ft_strlen(s), sizeof(char));
 	n = 0;
-
 	if (!c)
 		return (NULL);
 	while (s[n])
