@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 05:41:32 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/04 15:54:55 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/06 21:07:51 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	e = (ft_strlen(s1) - 1);
 	if (ft_strlen(s1) == 0)
-		return ((ft_strdup("")) while (triming(set, s1[i])) i++);
+		return (ft_strdup(""));
+	while (triming(set, s1[i]))
+		i++;
 	while (triming(set, s1[e]))
 		e--;
+	return (end_product(s1, i, e - (i - 1)));
 }
