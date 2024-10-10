@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 12:04:25 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:04 by robenite         ###   ########.fr       */
+/*   Created: 2024/10/10 16:07:31 by robenite          #+#    #+#             */
+/*   Updated: 2024/10/10 17:10:09 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*num;
-	int		i;
+	unsigned int	i;
+	int				stop;
+	char			*str;
 
-	num = ft_calloc(ft_strlen(n) + 1, sizeof(char));
-	i = ft_strlen(n);
-	while (i >= 0)
+	i = 0;
+	stop = ft_strlen(s);
+	str = ft_calloc(stop + 1, sizeof(char));
+	while (i <= stop)
 	{
-		num[i] = (n / 10);
-		i--;
+		str[i] = (*f)(i, s[i]);
+		i++;
 	}
-	return (num);
+	return (str);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 12:04:25 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:04 by robenite         ###   ########.fr       */
+/*   Created: 2024/10/10 18:13:21 by robenite          #+#    #+#             */
+/*   Updated: 2024/10/10 18:17:07 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_itoa(int n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*num;
-	int		i;
+	int	i;
 
-	num = ft_calloc(ft_strlen(n) + 1, sizeof(char));
-	i = ft_strlen(n);
-	while (i >= 0)
+	i = 0;
+	while (i <= ft_strlen(s))
 	{
-		num[i] = (n / 10);
-		i--;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return (num);
+	write(fd, '/n', 1);
 }

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 12:04:25 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:04 by robenite         ###   ########.fr       */
+/*   Created: 2024/10/10 18:19:16 by robenite          #+#    #+#             */
+/*   Updated: 2024/10/10 18:35:36 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_itoa(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*num;
-	int		i;
-
-	num = ft_calloc(ft_strlen(n) + 1, sizeof(char));
-	i = ft_strlen(n);
-	while (i >= 0)
+	if (n < 0)
 	{
-		num[i] = (n / 10);
-		i--;
+		write(fd, "-", 1);
+		n * -1;
 	}
-	return (num);
+	write(fd, &n, 1);
 }

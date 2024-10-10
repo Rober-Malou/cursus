@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:55:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/06 22:48:00 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:42:35 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strcpy(char *dest, char *src);
 size_t	ft_strlen(const char *s);
-int		strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strnstr(const char *chain, const char *subchain, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_toupper(int c);
@@ -41,3 +41,7 @@ char	*ft_strcpy(char *dest, char *src);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strdup(const char *s);
 char	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_itoa(int n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putchar_fd(char c, int fd);
