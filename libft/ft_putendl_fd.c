@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:13:21 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 18:17:07 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/12 02:05:15 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (i <= ft_strlen(s))
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;
 	}
-	write(fd, '/n', 1);
+	write(fd, "\n", 1);
 }

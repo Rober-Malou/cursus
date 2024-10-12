@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:00:46 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 17:23:09 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/12 03:42:01 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
-	int				stop;
 
 	i = 0;
-	stop = ft_strlen(s);
-	while (i <= stop)
+	while (s[i])
 	{
-		(*f)(i, s[i]);
+		(*f)(i, &s[i]);
 		i++;
 	}
 }

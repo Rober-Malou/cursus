@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:07:31 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/10 17:10:09 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/12 07:09:17 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	int				stop;
+	unsigned int	stop;
 	char			*str;
 
 	i = 0;

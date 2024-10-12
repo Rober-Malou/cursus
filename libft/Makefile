@@ -6,28 +6,43 @@
 #    By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 22:59:15 by robenite          #+#    #+#              #
-#    Updated: 2024/10/10 23:40:57 by robenite         ###   ########.fr        #
+#    Updated: 2024/10/11 20:46:23 by robenite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+SRC	= $(addprefix ft_, $(addsuffix .c, atoi bzero calloc isalnum isalpha isascii isdigit isprint itoa memccpy memchr memcmp memcmp memcpy memmove memset putchar_fd putendl_fd putnbr_fd putstr_fd split strchr strchr strdup striteri strjoin strlcat strlcpy strlen strmapi strncmp strnstr strrchr strtrim substr tolower toupper))
 
-SRCS	= $(addprefix ft_, atoi.c bzero.c calloc.c isalnum.c isalpha.c isascii.c isdigit.c isprint.c itoa.c memccpy.c memchr.c memcmp.c memcmp.c memcpy.c memmove.c memset.c putchar_fd.c putendl_fd.c putnbr_fd.c putstr_fd.c split.c strchr.c strchr.c strdup.c striteri.c strjoin.c strlcat.c strlcpy.c strlen.c strmapi.c strncmp.c strnstr.c strrchr.c strtrim.c substr.c tolower.c toupper.c)
+OBJS := $(SRC:%.c=%.o)
 
-OBJS	= $(SRCS: %.c=%.o)
+NAME = libft.a
 
-FLAGS	= -Wall -Wextra -Werror
+CC = gcc
 
-$(NAME):
-	gcc $(FLAGS) -c $(SRCS) -I.
-	ar rc $(NAME) $(OBJS)
+CCFLAGS = -Wall -Wextra -Werror
+
+INC_DIR = -I .
+
+CPPFLAGS = -I$(INC_DIR)
+
+RM = rm -f
+
+ARNAME = ar rcs $(NAME)
+
+RANNAME = ranlib $(NAME)
 
 all: $(NAME)
 
-clean:
-		rm -f $(OBJS)
+$(NAME): $(OBJS) 
+	$(ARNAME) $(OBJS) 
+	$(RANNAME)
+
+%.o: %.c
+	$(CC) $(INC_DIR) $(CCFLAGS) -o $@ -c $<
+
+clean: 
+	$(RM) $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+		$(RM) $(NAME)
 
 re: fclean all
