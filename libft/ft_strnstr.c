@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *chain, const char *subchain, size_t len)
 	size_t	i;
 	size_t	o;
 
+	i = 0;
+	o = 0;
 	if (subchain[0] == 0)
 		return ((char *)chain);
 	while (chain[i] && i < len)
