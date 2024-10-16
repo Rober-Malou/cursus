@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:43:41 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/12 02:19:24 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:55:50 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr_fd(char *s, int fd)
 
 	len = ft_strlen(s);
 	i = 0;
-	while (i <= len)
+	while (i < len)
 	{
 		write(fd, &s[i], 1);
 		i++;

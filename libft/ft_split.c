@@ -6,68 +6,70 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:37:59 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/12 03:05:35 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/15 01:32:00 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static int	ft_nsplit(const char *str, char c)
+static void	ft_free_splits(char **splits, int o)
+{
+	while (--o >= 0)
+		free(splits[o]);
+	free(splits);
+}
+
+int	ft_word_len(const char *s, char c)
 {
 	int	i;
-	int	count;
 
-	count = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+int	ft_counting(const char *s, char c)
+{
+	int	i;
+	int	num;
+
+	i = 0;
+	num = 0;
+	while (s[i])
 	{
-		if (str[i] == c)
-			count++;
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			num++;
 		i++;
 	}
-	return (count);
+	return (num);
 }
 
-static int	*ft_wordlen(char const *str, char c, int p)
+char	**ft_split(const char *s, char c)
 {
-	int	*len;
-
-	len = 0;
-	while (str[p] != c)
-		len++;
-	return (len);
-}
-
-char	*ft_wordscopy(int start, int finish)
-{
-	char	*word;
-
-	word = (char *)malloc(finish - start);
-	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**split;
+	int		n_words;
+	char	**splits;
 	int		i;
-	int		words;
-	int		finish;
-	int		start;
+	int		o;
+	int		word_len;
 
-	words = ft_nsplit(s, c);
-	split = ft_calloc(words, sizeof(char));
+	n_words = ft_counting(s, c);
+	splits = (char **)ft_calloc(n_words + 1, sizeof(char *));
 	i = 0;
-	start = 0;
-	finish = *ft_wordlen(s, c, start);
-	while (i <= words)
+	o = 0;
+	if (!splits)
+		return (NULL);
+	while (s[i] && o < n_words)
 	{
-		*split[i] = *ft_wordscopy(start, finish);
-		while (split[start] <= split[finish])
-		{
-			*split[start] = s[start];
-			start++;
-		}
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		word_len = ft_word_len(&s[i], c);
+		splits[o] = ft_substr(s, i, word_len);
+		if (!splits[o])
+			return (ft_free_splits(splits, o), NULL);
+		i += word_len;
+		o++;
 	}
-	return (split);
+	splits[o] = NULL;
+	return (splits);
 }

@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:19:16 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/12 02:15:51 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/14 21:45:50 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int	digit;
+	char	c;
 
-	digit = n + 48;
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (n < 0)
 	{
 		write(fd, "-", 1);
 		n = -n;
 	}
-	while (n > 9)
+	if (n >= 10)
 	{
-		write(fd, &digit, 1);
-		n /= 10;
+		ft_putnbr_fd(n / 10, fd);
 	}
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }
