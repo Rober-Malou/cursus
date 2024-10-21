@@ -6,7 +6,7 @@
 #    By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 22:59:15 by robenite          #+#    #+#              #
-#    Updated: 2024/10/17 05:56:53 by robenite         ###   ########.fr        #
+#    Updated: 2024/10/21 07:28:16 by robenite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,6 @@ CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
 
 INC_DIR = -I .
-
-CPPFLAGS = -I$(INC_DIR)
 
 RM = rm -f
 
