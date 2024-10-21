@@ -6,7 +6,7 @@
 #    By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 22:59:15 by robenite          #+#    #+#              #
-#    Updated: 2024/10/21 07:39:34 by robenite         ###   ########.fr        #
+#    Updated: 2024/10/21 07:48:04 by robenite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ NAME = libft.a
 
 CC = cc
 
-CCFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 INC_DIR = -I .
 
@@ -46,7 +46,7 @@ bonus: $(OBJS) $(BONUS_OBJS)
 	$(eval BONUS_FLAG = 1)
 
 %.o: %.c
-	$(CC) $(INC_DIR) $(CCFLAGS) -o $@ -c $<
+	$(CC) $(INC_DIR) $(CFLAGS) -o $@ -c $<
 
 clean: 
 	$(RM) $(OBJS) $(BONUS_OBJS)
