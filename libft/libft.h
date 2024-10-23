@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:55:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/17 05:59:03 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/23 02:24:04 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 char				*ft_strchr(const char *s, int c);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
-char				*ft_strcpy(char *dest, char *src);
+size_t				ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *chain, const char *subchain,
@@ -45,7 +45,6 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
-char				ft_strlcpy(char *dest, const char *src, size_t destsize);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_strdup(const char *s);
 char				**ft_split(char const *s, char c);
