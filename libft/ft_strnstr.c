@@ -15,22 +15,22 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *chain, const char *subchain, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	o;
 
 	i = 0;
 	o = 0;
-	if (subchain[0] == 0)
-		return ((char *)chain);
-	while (chain[i] && i < len)
+	if (little[0] == 0)
+		return ((char *)big);
+	while (big[i] && i < len)
 	{
-		while (chain[i + o] == subchain[o] && chain[i + o] && i + o < len)
+		while (big[i + o] == little[o] && big[i + o] && i + o < len)
 		{
 			o++;
-			if (subchain[o] == 0)
-				return ((char *)chain + i);
+			if (little[o] == 0)
+				return ((char *)big + i);
 		}
 		i++;
 		o = 0;

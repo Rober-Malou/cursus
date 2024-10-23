@@ -6,7 +6,7 @@
 #    By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 22:59:15 by robenite          #+#    #+#              #
-#    Updated: 2024/10/23 02:11:44 by robenite         ###   ########.fr        #
+#    Updated: 2024/10/24 01:48:45 by robenite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,6 @@ $(NAME): $(OBJS)
 bonus: $(OBJS) $(BONUS_OBJS)
 	$(ARNAME) $(OBJS) $(BONUS_OBJS)
 	$(RANNAME) 
-	$(eval BONUS_FLAG = 1)
 
 %.o: %.c
 	$(CC) $(INC_DIR) $(CFLAGS) -o $@ -c $<
