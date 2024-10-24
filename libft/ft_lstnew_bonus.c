@@ -6,11 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 09:23:01 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 01:46:20 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:08:41 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

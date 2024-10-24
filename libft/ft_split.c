@@ -6,11 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:37:59 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 01:46:42 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:08:18 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static void	ft_free_splits(char **splits, int o)
 {

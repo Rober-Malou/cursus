@@ -6,12 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:25 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 01:46:06 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:09:00 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_intlen(int nbr)
 {

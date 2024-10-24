@@ -6,11 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 12:21:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 01:46:45 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/24 23:08:14 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
