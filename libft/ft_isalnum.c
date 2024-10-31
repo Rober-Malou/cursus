@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if the int feed is a number or a letter in ASCII
+
 #include "libft.h"
 
 int	ft_isalnum(int c)

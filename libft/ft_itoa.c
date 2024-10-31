@@ -6,13 +6,17 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:04:25 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:09:00 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 00:22:52 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// It converts a number(int) to the same number as a char
+
 #include "libft.h"
 
-size_t	ft_intlen(int nbr)
+// Checks how many positions an int have as in 10 or 100 etc
+
+static size_t	ft_intlen(int nbr)
 {
 	size_t	count;
 

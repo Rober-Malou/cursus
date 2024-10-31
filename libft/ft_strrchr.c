@@ -13,6 +13,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It looks for the last occurrence of the character c in s and returns a
+// pointer to the occurrence
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

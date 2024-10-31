@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It fills the first n bites with c in the string s
+
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)

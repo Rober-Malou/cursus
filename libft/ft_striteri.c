@@ -6,9 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 17:00:46 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:08:11 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 02:04:30 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// It plays a function of your choosing to every character of the string
 
 #include "libft.h"
 

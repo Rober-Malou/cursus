@@ -13,6 +13,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It makes minus into mayus
 #include "libft.h"
 
 int	ft_toupper(int c)

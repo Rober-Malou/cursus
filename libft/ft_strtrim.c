@@ -6,9 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 05:41:32 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:07:54 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 02:29:16 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// It deletes all the characters of the set from the beginning and the end of a
+// string until it finds a character that is not in the set
 
 #include "libft.h"
 

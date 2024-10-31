@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if an int is part of the international ASCII table
+
 #include "libft.h"
 
 int	ft_isascii(int c)

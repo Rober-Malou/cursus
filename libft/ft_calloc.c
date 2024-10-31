@@ -6,9 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 17:43:59 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:09:14 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/30 23:31:23 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Reserves a number of bites of memory and inicialices to '\0' so you won't
+// have rubbish data by accident
 
 #include "libft.h"
 

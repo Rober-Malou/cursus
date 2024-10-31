@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It makes mayus into minus
+
 #include "libft.h"
 
 int	ft_tolower(int c)

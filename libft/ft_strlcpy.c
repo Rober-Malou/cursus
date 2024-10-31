@@ -13,6 +13,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Copies src in dst, garanties the null terminator and returns the length of
+// src
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)

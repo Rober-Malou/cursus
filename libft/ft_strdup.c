@@ -6,9 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 12:21:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:08:14 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 01:59:58 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Returns a pointer to a new string that is a copy of s
 
 #include "libft.h"
 
@@ -26,6 +28,5 @@ char	*ft_strdup(const char *s)
 		c[n] = s[n];
 		n++;
 	}
-	c[n] = 0;
 	return (c);
 }

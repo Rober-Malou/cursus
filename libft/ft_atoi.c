@@ -13,9 +13,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Converts nptr(a string o part of it) from a char to an int, always a number
+
 #include "libft.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
 		|| c == '\r')

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if the int is a letter in ASCII
+
 #include "libft.h"
 
 int	ft_isalpha(int c)

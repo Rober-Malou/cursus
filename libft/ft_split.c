@@ -6,11 +6,15 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:37:59 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:08:18 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 01:11:14 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// It breaks a string into several pieces by a character and sabe them in a
+// matrix
 #include "libft.h"
+
+// Free the memory tha was allocate in case it fails
 
 static void	ft_free_splits(char **splits, int o)
 {
@@ -19,7 +23,9 @@ static void	ft_free_splits(char **splits, int o)
 	free(splits);
 }
 
-int	ft_word_len(const char *s, char c)
+// Checks the length of every part of the split so the memory can be allocate
+
+static int	ft_word_len(const char *s, char c)
 {
 	int	i;
 
@@ -29,7 +35,9 @@ int	ft_word_len(const char *s, char c)
 	return (i);
 }
 
-int	ft_counting(const char *s, char c)
+// It checks in how many chunks the string is going to be broken into
+
+static int	ft_counting(const char *s, char c)
 {
 	int	i;
 	int	num;

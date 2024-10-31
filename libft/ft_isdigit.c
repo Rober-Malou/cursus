@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checkes if the int is a number in the ASCII table
+
 #include "libft.h"
 
 int	ft_isdigit(int c)

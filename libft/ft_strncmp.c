@@ -13,6 +13,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Compares the first n bites of a string to another and returns a -int if
+// s1 < s2, +int if s1 > s2 and 0 if they are the same
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

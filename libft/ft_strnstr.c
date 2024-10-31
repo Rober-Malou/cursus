@@ -13,6 +13,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It checks if a small string is inside of a big one in the given length and
+// returns a pointer where the coincidence starts
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)

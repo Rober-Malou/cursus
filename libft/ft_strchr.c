@@ -13,6 +13,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Returns a pointer to the first occurrence of c
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

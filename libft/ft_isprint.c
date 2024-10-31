@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if the int is part of the part of the ASCII table that is printable
+
 #include "libft.h"
 
 int	ft_isprint(int c)

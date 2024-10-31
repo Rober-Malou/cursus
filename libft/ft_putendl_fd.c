@@ -6,9 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:13:21 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:08:24 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 02:34:18 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Writes a string in the file descriptor of your choosing and a line change
+// at the end.
 
 #include "libft.h"
 

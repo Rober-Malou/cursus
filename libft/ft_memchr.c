@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// It finds c in the first n bites of s and returns a pointer to the place it
+// found c
+
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

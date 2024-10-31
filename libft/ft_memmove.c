@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+// Copies n bites from a string to another. Careful, the memory may overlap
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)

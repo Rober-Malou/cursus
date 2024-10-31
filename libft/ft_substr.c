@@ -6,9 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 22:04:14 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/24 23:07:53 by robenite         ###   ########.fr       */
+/*   Updated: 2024/10/31 02:30:54 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// It makes a new string that is a part of the existing string starting where
+// you want and finishing in a given length
 
 #include "libft.h"
 
