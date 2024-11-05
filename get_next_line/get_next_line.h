@@ -3,11 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:53:52 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/05 02:09:05 by malou            ###   ########.fr       */
+/*   Updated: 2024/11/05 05:21:31 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*get_next_line(int fd);
+int	main(int argc, char *argv[]);
