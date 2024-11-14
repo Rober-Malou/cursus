@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/13 10:41:03 by robenite         ###   ########.fr       */
+/*   Updated: 2024/11/14 07:33:51 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,36 @@ char	*get_next_line(int fd)
 
 char	*looking(int fd)
 {
-	void			*buf;
-	static ssize_t	*bites_read;
+	static char			*buf;
+	static ssize_t	bytes_read;
 	static int		i;
 	size_t			o;
+	char			*new_line;
 
-	i = 0;
-	o = 0;
-	buf = malloc(1024);
+	if (!i)
+		i = 0;
 	if (i == 1024)
 	{
 		free(buf);
-		buf = malloc(1024);
 		i = 0;
 	}
 	if (i == 0)
 	{
-		bites_read = read(fd, buf, 1023);
-		bites_read[1024] = '/0';
+		buf = malloc(1024);
+		if (!buf)
+			return (NULL);
+		bytes_read = read(fd, buf, 1023);
+		if (bytes_read == -1)
+		{
+			free(buf);
+			return (NULL);
+		}
+		buf[bytes_read] = '\0';
 	}
-	while (bites_read[i] != '/n' && bites_read[i] != '/0')
-		o++;
-	return (*ft_substr(bites_read, i, o));
+	o = (ft_strlen(buf) - ft_strlen(ft_strchr(buf + i, '\n')));
+	new_line = ft_substr(buf, i, o);
+	i = o + 1;
+	return (new_line);
 }
 
 char	*found(int fd)
