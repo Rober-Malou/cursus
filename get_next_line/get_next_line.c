@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/17 22:21:30 by robenite         ###   ########.fr       */
+/*   Updated: 2024/11/18 06:36:24 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,15 @@ char	*looking(int fd)
 		}
 		buf[bytes_read] = '\0';
 		i = 0;
-		printf("bufer \n %s", buf);
+		//printf("bufer \n %s", buf);
 	}
 	chunk = ft_strchr(buf + i, '\n');
+	//printf("print i %d", i);
 	printf("chunk \n %s", chunk);
-	o = (ft_strlen(buf) - ft_strlen(chunk));
+	o = (ft_strlen(buf) - ft_strlen(chunk) + 1);
 	new_line = ft_substr(buf, i, o);
 	printf("lo que devuelve \n %s", new_line);
-	i = i + o + 1;
+	i = i + o -1;
 	return (new_line);
 }
 
@@ -73,13 +74,38 @@ char	*found(int fd)
 	static char	*left_over;
 
 	l_read = looking(fd);
-	printf("%s", l_read);
+	//printf("lo que devuelve found %s", l_read);
 	l_read_len = ft_strlen(l_read);
-	if (l_read[l_read_len] != '\n')
+	if (l_read[l_read_len - 1] != '\n')
 	{
 		left_over = l_read;
 		l_read = ft_strjoin(left_over, l_read);
+		free(left_over);
+		printf("lo que devuelve join \n %s", l_read);
 		return (l_read);
 	}
 	return (l_read);
+}
+
+int	main(int argc, char *argv[])
+{
+	int	fd;
+	char *read;
+
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		printf("%s", "There is no file");
+		return (0);
+	}
+	read = get_next_line(fd);
+	printf("primera llamada \n %s", read);
+	//free(read);
+	read = get_next_line(fd);
+	printf("segunda llamada \n %s", read);
+	//free(read);
+	read = get_next_line(fd);
+	printf("tercera llamada \n %s", read);
+	//free(read);
+	return (0);
 }
