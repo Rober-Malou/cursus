@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:53:47 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/13 10:32:28 by robenite         ###   ########.fr       */
+/*   Updated: 2024/11/15 05:07:43 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,17 @@ char	*ft_strdup(const char *s)
 	}
 	c[n] = '\0';
 	return (c);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
