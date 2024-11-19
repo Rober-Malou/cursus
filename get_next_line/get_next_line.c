@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/18 06:36:24 by robenite         ###   ########.fr       */
+/*   Updated: 2024/11/19 08:22:00 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char	*looking(int fd);
 char	*found(int fd);
+int		main(int argc, char *argv[]);
 
 char	*get_next_line(int fd)
 {
@@ -34,7 +35,7 @@ char	*looking(int fd)
 	static int		i;
 	size_t			o;
 	char			*new_line;
-	char	*chunk;
+	char			*chunk;
 
 	if (!i)
 		i = 0;
@@ -55,15 +56,24 @@ char	*looking(int fd)
 		}
 		buf[bytes_read] = '\0';
 		i = 0;
-		//printf("bufer \n %s", buf);
+		// printf("bufer \n %s", buf);
 	}
 	chunk = ft_strchr(buf + i, '\n');
-	//printf("print i %d", i);
-	printf("chunk \n %s", chunk);
-	o = (ft_strlen(buf) - ft_strlen(chunk) + 1);
+	// printf("print i %d", i);
+	//printf("chunk \n %s", chunk);
+	if (chunk)
+		o = chunk - (buf + i) + 1;
+	else
+		o = ft_strlen(buf + i);
 	new_line = ft_substr(buf, i, o);
-	printf("lo que devuelve \n %s", new_line);
-	i = i + o -1;
+	if (!new_line)
+	{
+		free(new_line);
+		new_line = NULL;
+		return (NULL);
+	}
+	//printf("lo que devuelve \n %s", new_line);
+	i += o;
 	return (new_line);
 }
 
@@ -74,14 +84,44 @@ char	*found(int fd)
 	static char	*left_over;
 
 	l_read = looking(fd);
-	//printf("lo que devuelve found %s", l_read);
+	// printf("lo que devuelve found %s", l_read);
 	l_read_len = ft_strlen(l_read);
-	if (l_read[l_read_len - 1] != '\n')
+	if (l_read[l_read_len - 1] != '\n' || left_over != NULL)
 	{
-		left_over = l_read;
+		left_over = ft_strdup(l_read);
+		if (!left_over)
+		{
+			free(left_over);
+			left_over = NULL;
+		}
 		l_read = ft_strjoin(left_over, l_read);
+		if (!l_read)
+		{
+			free(l_read);
+			l_read = NULL;
+			return (NULL);
+		}
 		free(left_over);
-		printf("lo que devuelve join \n %s", l_read);
+		left_over = NULL;
+		if (l_read[(ft_strlen(l_read)) - 1] != '\n')
+		{
+			left_over = ft_strdup(l_read);
+			if (!left_over)
+			{
+				free(left_over);
+				left_over = NULL;
+			}
+			l_read = looking(fd);
+			if (!l_read)
+			{
+				free(l_read);
+				l_read = NULL;
+				return (NULL);
+			}
+		}
+		free(left_over);
+		left_over = NULL;
+		//printf("lo que devuelve join \n %s", l_read);
 		return (l_read);
 	}
 	return (l_read);
@@ -89,8 +129,8 @@ char	*found(int fd)
 
 int	main(int argc, char *argv[])
 {
-	int	fd;
-	char *read;
+	int		fd;
+	char	*read;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
@@ -100,12 +140,115 @@ int	main(int argc, char *argv[])
 	}
 	read = get_next_line(fd);
 	printf("primera llamada \n %s", read);
-	//free(read);
+	free(read);
+	read = NULL;
 	read = get_next_line(fd);
 	printf("segunda llamada \n %s", read);
-	//free(read);
+	free(read);
+	read = NULL;
 	read = get_next_line(fd);
 	printf("tercera llamada \n %s", read);
-	//free(read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
+	printf("tercera llamada \n %s", read);
+	free(read);
+	read = NULL;
 	return (0);
+	close(fd);
 }
