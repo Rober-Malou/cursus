@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/23 07:02:00 by robenite         ###   ########.fr       */
+/*   Updated: 2024/11/25 04:25:02 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,11 @@ char	*found(int fd)
 			free(l_read);
 			l_read = NULL;
 			return (NULL);
+		}
+		if (l_read[ft_strlen(l_read) - 1] != '\n')
+		{
+			left_over = ft_strdup(l_read);
+			found(fd);
 		}
 		free(left_over);
 		left_over = NULL;
