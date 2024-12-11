@@ -6,18 +6,22 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:53:52 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/15 05:07:30 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/11 01:20:07 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef get_next_line.h
+# define BUFFER_SIZE (42)
+#endif
+
 #include <fcntl.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
 
 char	*get_next_line(int fd);
-char    *looking();
-char    *found();
+char	*looking(int fd);
+char	*found(int fd);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);

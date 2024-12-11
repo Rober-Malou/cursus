@@ -6,11 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/11/29 06:11:07 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/11 01:15:06 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#
 
 char	*ft_going_free(char **object);
 char	*looking(int fd);
@@ -31,7 +32,8 @@ char	*get_next_line(int fd)
 
 char	*looking(int fd)
 {
-	static char			*buf;
+	int	BUFFER_SIZE;
+	static char		*buf;
 	static ssize_t	bytes_read;
 	static int		i;
 	size_t			o;
@@ -48,10 +50,10 @@ char	*looking(int fd)
 	}
 	if (i == 0 || i >= bytes_read)
 	{
-		bytes_read = read(fd, buf, 1023);
+		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == 0)
 			return (ft_going_free(&buf));
-		else if(bytes_read < 0)
+		else if (bytes_read < 0)
 			return (ft_going_free(&buf));
 		else
 			buf[bytes_read] = '\0';
@@ -98,11 +100,11 @@ char	*found(int fd)
 				return (ft_going_free(&result));
 			while (result && result[ft_strlen(result) - 1] != '\n')
 			{
-    			left_over = ft_strdup(result);
-    			ft_going_free(&result);
-    			l_read = looking(fd);
-    			if (l_read)
-        			result = ft_strjoin(left_over, l_read);
+				left_over = ft_strdup(result);
+				ft_going_free(&result);
+				l_read = looking(fd);
+				if (l_read)
+					result = ft_strjoin(left_over, l_read);
 			}
 		}
 		free(left_over);
