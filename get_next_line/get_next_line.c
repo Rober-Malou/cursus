@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/11 01:15:06 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:09:09 by malou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 char	*ft_going_free(char **object);
 char	*looking(int fd);
 char	*found(int fd);
-int		main(int argc, char *argv[]);
+//int		main(int argc, char *argv[]);
 
 char	*get_next_line(int fd)
 {
 	char	*next_line;
 
-	if (fd < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	next_line = found(fd);
 	if (!next_line)
@@ -32,7 +32,6 @@ char	*get_next_line(int fd)
 
 char	*looking(int fd)
 {
-	int	BUFFER_SIZE;
 	static char		*buf;
 	static ssize_t	bytes_read;
 	static int		i;
@@ -44,7 +43,7 @@ char	*looking(int fd)
 		i = 0;
 	if (!buf)
 	{
-		buf = malloc(1024 * sizeof(char));
+		buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!buf)
 			return (ft_going_free(&buf));
 	}
@@ -104,7 +103,10 @@ char	*found(int fd)
 				ft_going_free(&result);
 				l_read = looking(fd);
 				if (l_read)
+				{
 					result = ft_strjoin(left_over, l_read);
+					//ft_going_free(&l_read);
+				}
 			}
 		}
 		free(left_over);
@@ -124,109 +126,19 @@ char	*ft_going_free(char **object)
 	return (NULL);
 }
 
-int	main(int argc, char *argv[])
-{
-	int		fd;
-	char	*read;
 
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
+int main(void)
+{
+	int fd;
+	char *line;
+	fd = open("el_quijote.txt", O_RDONLY);
+	if(fd < 0)
+		printf("error al abrir el archivo");
+	while((line = get_next_line(fd)) != NULL)
 	{
-		printf("%s", "There is no file");
-		return (0);
+		printf("%s", line);
+		free(line);
 	}
-	read = get_next_line(fd);
-	printf("primera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("segunda llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
-	read = get_next_line(fd);
-	printf("tercera llamada \n %s", read);
-	free(read);
-	read = NULL;
 	close(fd);
-	return (0);
+	return(0);
 }
