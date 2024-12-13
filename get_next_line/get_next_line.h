@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
+/*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:53:52 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/13 00:47:05 by malou            ###   ########.fr       */
+/*   Updated: 2024/12/13 06:10:36 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef get_next_line_h
-# define get_next_line_h
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -23,13 +23,14 @@
 # include <unistd.h>
 
 char	*get_next_line(int fd);
-char	*looking(int fd);
-char	*found(int fd);
+char	*looking(int fd, char **buf, ssize_t *bytes_read, int *i);
+char	*found(int fd, char **buf, ssize_t *bytes_read, int *i);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-// int		main(int argc, char *argv[]);
+char	*merge_line(char *i_line, int fd, char **buf, ssize_t *bytes_read,
+			int *i);
 
 #endif
