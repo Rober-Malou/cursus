@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:52:24 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/13 06:25:23 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:59:02 by malou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,17 @@ char	*get_next_line(int fd)
 	static char		*buf = NULL;
 	static ssize_t	bytes_read = 0;
 	static int		i = 0;
+	static char	new_piece_of_line = NULL;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	next_line = found(fd, &buf, &bytes_read, &i);
 	if (!next_line)
 		return (NULL);
+	if (new_piece_of_line == NULL && next_line[ft_strlen(next_line) - 1] != '\n')
+		new_piece_of_line = ft_strdup(next_line);
+	else
+		
 	return (next_line);
 }
 
@@ -75,10 +80,7 @@ char	*found(int fd, char **buf, ssize_t *bytes_read, int *i)
 	l_read = looking(fd, buf, bytes_read, i);
 	if (!l_read)
 		return (NULL);
-	if (l_read[ft_strlen(l_read) - 1] == '\n')
 		return (l_read);
-	result = merge_line(l_read, fd, buf, bytes_read, i);
-	return (result);
 }
 
 char	*going_free(char **object)
