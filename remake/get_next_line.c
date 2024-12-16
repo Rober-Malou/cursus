@@ -6,11 +6,16 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 01:40:31 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/16 06:48:33 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/16 16:42:52 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*get_next_line(int fd);
+char	*check_line(int fd, char *buf, ssize_t *bytes_read, int *i);
+char	*join_pieces(char *piece_of_line);
+char	*going_free(char **object);
 
 char	*get_next_line(int fd)
 {
@@ -29,9 +34,10 @@ char	*get_next_line(int fd)
 		bytes_read = 0;
 		i = 0;
 	}
-	next_line = check_line(fd, buf, bytes_read, i);
+	next_line = NULL;
 	while (next_line[ft_strlen(next_line) - 1] != '\n')
 	{
+		next_line = check_line(fd, buf, bytes_read, i);
 		next_line = join_pieces(next_line);
 	}
 	if (!next_line)
