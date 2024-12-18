@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 01:38:32 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/17 03:26:16 by robenite         ###   ########.fr       */
+/*   Created: 2024/11/01 03:53:52 by robenite          #+#    #+#             */
+/*   Updated: 2024/12/19 00:26:09 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char		*ft_strchr(const char *s, int c);
-char		*ft_strdup(const char *s);
-size_t		ft_strlen(const char *s);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strjoin(char const *s1, char const *s2);
-char		*get_next_line(int fd);
-char		*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*get_next_line(int fd);
 #endif
