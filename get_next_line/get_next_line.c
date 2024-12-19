@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 01:40:31 by robenite          #+#    #+#             */
-/*   Updated: 2024/12/19 00:30:33 by robenite         ###   ########.fr       */
+/*   Updated: 2024/12/19 01:44:11 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,9 @@ static char	*_cuting_line(char *piece_of_text)
 	piece_of_text[i + 1] = 0;
 	return (leftover);
 }
+/*#include <stdio.h>
 
-/*int	main(void)
+int	main(void)
 {
 	int		fd;
 	char	*line;
@@ -104,7 +105,8 @@ static char	*_cuting_line(char *piece_of_text)
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		printf("%s", line);
-		going_free(&line);
+		free (line);
+		line = NULL;
 	}
 	close(fd);
 	return (0);
