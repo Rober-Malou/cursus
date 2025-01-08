@@ -6,15 +6,15 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:31:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/01 05:31:03 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:43:48 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static int	format_chek(char format, va_list args);
-static int	hexa_f(unsigned long long args, char *base, int c);
-static int	float_f(float args);
+static int	pointer_f(unsigned long long args, char *base);
+static int	hexa_f(unsigned long long int args, char *base);
 static int	ft_putnbr_ish_no_sign_fd(int args);
 
 int	ft_printf(char const *text, ...)
@@ -51,65 +51,46 @@ static int	format_chek(char format, va_list args)
 	else if (format == 's')
 		r_counter = ft_putstr_ish_fd(va_arg(args, char *), 1);
 	else if (format == 'p')
-		r_counter = hexa_f(va_arg(args, unsigned long long), "0123456789abcdef",
-				1);
-	else if (format == 'd')
-		r_counter = float_f(va_arg(args, double));
-	else if (format == 'i')
+		r_counter = pointer_f(va_arg(args, unsigned long long int),
+				"0123456789abcdef");
+	else if (format == 'd' || format == 'i')
 		r_counter = ft_putnbr_ish_fd(va_arg(args, int), 1);
 	else if (format == 'u')
 		r_counter = ft_putnbr_ish_no_sign_fd(va_arg(args, int));
 	else if (format == 'x')
-		r_counter = hexa_f(va_arg(args, unsigned long long), "0123456789abcdef",
-				1);
+		r_counter = hexa_f(va_arg(args, unsigned long long int),
+				"0123456789abcdef");
 	else if (format == 'X')
-		r_counter = hexa_f(va_arg(args, unsigned long long), "0123456789ABCDEF",
-				1);
+		r_counter = hexa_f(va_arg(args, unsigned long long int),
+				"0123456789ABCDEF");
 	else if (format == '%')
-		r_counter = ft_putchar_ish_fd(va_arg(args, int), 1);
+		r_counter = ft_putchar_ish_fd('%', 1);
 	return (r_counter);
 }
 
-static int	hexa_f(unsigned long long args, char *base, int c)
+static int	pointer_f(unsigned long long int args, char *base)
 {
 	int	sum;
 
 	sum = 0;
 	if (!args)
 	{
-		sum = ft_putstr_ish_fd("NULL", 1);
+		sum = ft_putstr_ish_fd("(nil)", 1);
 		return (sum);
 	}
-	if (c == 1)
-	{
-		sum += ft_putstr_ish_fd("0x", 1);
-		c = 0;
-	}
-	while (args >= 16)
-		sum += hexa_f(args / 16, base, c);
-	sum += ft_putstr_ish_fd(&base[args % 16], 1);
+	sum += ft_putstr_ish_fd("0x", 1);
+	sum += hexa_f(args, *base);
 	return (sum);
 }
 
-static int	float_f(float args)
+static int	hexa_f(unsigned long long int args, char *base)
 {
-	int		sum;
-	int		control;
-	float	left_over;
+	int	sum;
 
 	sum = 0;
-	control = (int)args;
-	left_over = args;
-	sum += ft_putnbr_ish_fd(args, 1);
-	sum += ft_putchar_ish_fd('.', 1);
-	left_over = left_over - control;
-	while (left_over > 0)
-	{
-		left_over = left_over * 10;
-		sum += ft_putnbr_ish_fd(left_over, 1);
-		left_over = control;
-		left_over = left_over - control;
-	}
+	if (args >= 16)
+		sum += hexa_f(args / 16, base);
+	sum += ft_putchar_ish_fd(&base[args % 16], 1);
 	return (sum);
 }
 
