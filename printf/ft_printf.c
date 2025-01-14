@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:31:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/08 19:14:09 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/09 20:41:21 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	format_chek(char format, va_list args);
 static int	pointer_f(unsigned int args, char *base);
 static int	hexa_f(unsigned int args, char *base);
-static int	ft_putnbr_ish_no_sign_fd(int args);
+static int	ft_putnbr_ish_no_sign_fd(unsigned long args);
 
 int	ft_printf(char const *text, ...)
 {
@@ -56,7 +56,7 @@ static int	format_chek(char format, va_list args)
 	else if (format == 'd' || format == 'i')
 		r_counter = ft_putnbr_ish_fd(va_arg(args, int), 1);
 	else if (format == 'u')
-		r_counter = ft_putnbr_ish_no_sign_fd(va_arg(args, int));
+		r_counter = ft_putnbr_ish_no_sign_fd(va_arg(args, unsigned long));
 	else if (format == 'x')
 		r_counter = hexa_f(va_arg(args, unsigned int),
 				"0123456789abcdef");
@@ -94,20 +94,14 @@ static int	hexa_f(unsigned int args, char *base)
 	return (sum);
 }
 
-static int	ft_putnbr_ish_no_sign_fd(int args)
+static int	ft_putnbr_ish_no_sign_fd( unsigned long args)
 {
 	char	c;
 	int		count;
 
 	count = 0;
-	if (args == -2147483648)
-	{
-		count += write(1, "2147483648", 10);
-		return (count);
-	}
-	if (args < 0)
-		args = -args;
-	if (args >= 10)
+
+	if (args >= 10 || args <= 0)
 	{
 		count += ft_putnbr_ish_no_sign_fd(args / 10);
 	}
