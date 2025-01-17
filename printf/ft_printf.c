@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:31:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/09 20:41:21 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/17 02:55:50 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ static int	ft_putnbr_ish_no_sign_fd( unsigned long args)
 	int		count;
 
 	count = 0;
-
 	if (args >= 10 || args <= 0)
 	{
 		count += ft_putnbr_ish_no_sign_fd(args / 10);
