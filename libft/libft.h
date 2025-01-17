@@ -6,12 +6,16 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:55:48 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/31 02:08:31 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/17 02:47:20 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+# include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -66,4 +70,5 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+char				*get_next_line(int fd);
 #endif
