@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 01:34:56 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/01 05:17:30 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/08 19:14:10 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_putnbr_ish_fd(int n, int fd)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_ish_fd(n / 10, fd);
+		count += ft_putnbr_ish_fd(n / 10, fd);
 	}
 	c = (n % 10) + '0';
 	count += write(fd, &c, 1);
