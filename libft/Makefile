@@ -6,15 +6,15 @@
 #    By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/10 22:59:15 by robenite          #+#    #+#              #
-#    Updated: 2024/10/31 02:37:24 by robenite         ###   ########.fr        #
+#    Updated: 2025/01/20 22:16:45 by robenite         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC	= $(addprefix ft_, $(addsuffix .c, atoi bzero calloc isalnum isalpha \
+SRC	= $(addsuffix .c, get_next_line )$(addprefix ft_, $(addsuffix .c, atoi bzero calloc isalnum isalpha \
 	isascii isdigit isprint itoa memchr memcmp memcmp memcpy \
 	memmove memset putchar_fd putendl_fd putnbr_fd putstr_fd split strchr \
 	strchr strdup striteri strjoin strlcat strlcpy strlen strmapi strncmp \
-	strnstr strrchr strtrim substr tolower toupper))
+	strnstr strrchr strtrim substr tolower toupper ))$(addsuffix .c, get_next_line)
 
 BONUS_SRC= $(addprefix ft_, $(addsuffix _bonus.c, lstnew lstadd_front lstsize \
 	lstlast lstadd_back lstdelone lstclear lstiter lstmap))
