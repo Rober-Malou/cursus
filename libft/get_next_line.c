@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 01:40:31 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/20 21:44:56 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/17 02:53:59 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,26 +88,4 @@ static char	*_cuting_line(char *piece_of_text)
 	}
 	piece_of_text[i + 1] = 0;
 	return (leftover);
-}
-#include <stdio.h>
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("el_quijote.txt", O_RDONLY);
-	if (fd < 0)
-	{
-		printf("error al abrir el archivo");
-		return (1);
-	}
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("%s", line);
-		free (line);
-		line = NULL;
-	}
-	close(fd);
-	return (0);
 }
