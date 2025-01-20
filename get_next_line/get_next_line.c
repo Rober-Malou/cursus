@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 01:40:31 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/09 20:46:36 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/20 19:27:54 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static char	*_cuting_line(char *piece_of_text)
 	piece_of_text[i + 1] = 0;
 	return (leftover);
 }
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -110,4 +110,4 @@ int	main(void)
 	}
 	close(fd);
 	return (0);
-}*/
+}
