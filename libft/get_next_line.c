@@ -6,11 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 01:40:31 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/17 02:53:59 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/21 12:52:17 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*fech_next_line(int fd, char *leftover, char *buffer);
 static char	*_cuting_line(char *piece_of_text);
