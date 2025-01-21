@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 01:34:56 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/20 21:22:22 by robenite         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:53:58 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_putstr_ish_fd(char *s, int fd)
 	int	len;
 
 	if (!s)
-		len += ft_putstr_ish_fd("NULL", 1);
+		len = ft_putstr_ish_fd("(null)", 1);
 	else
 	{
 		len = ft_strlen(s);
