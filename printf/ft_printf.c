@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:31:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/02 02:20:55 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/02 02:30:17 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static int	format_chek(char format, va_list args)
 		r_counter = ft_putstr_ish_fd(va_arg(args, char *), 1);
 	else if (format == 'p')
 		r_counter = pointer_f(va_arg(args, unsigned long),
+		r_counter = pointer_f(va_arg(args, unsigned long),
 				"0123456789abcdef");
 	else if (format == 'd' || format == 'i')
 		r_counter = ft_putnbr_ish_fd(va_arg(args, int), 1);
@@ -59,8 +60,10 @@ static int	format_chek(char format, va_list args)
 		r_counter = ft_putnbr_ish_no_sign_fd(va_arg(args, unsigned int));
 	else if (format == 'x')
 		r_counter = hexa_f(va_arg(args, unsigned long),
+		r_counter = hexa_f(va_arg(args, unsigned long),
 				"0123456789abcdef");
 	else if (format == 'X')
+		r_counter = hexa_f(va_arg(args, unsigned long),
 		r_counter = hexa_f(va_arg(args, unsigned long),
 				"0123456789ABCDEF");
 	else if (format == '%')
@@ -68,6 +71,7 @@ static int	format_chek(char format, va_list args)
 	return (r_counter);
 }
 
+static int	pointer_f(unsigned long args, char *base)
 static int	pointer_f(unsigned long args, char *base)
 {
 	int	sum;
@@ -83,7 +87,7 @@ static int	pointer_f(unsigned long args, char *base)
 	return (sum);
 }
 
-static int	hexa_f(unsigned int args, char *base)
+static int	hexa_f(unsigned long args, char *base)
 {
 	int	sum;
 
