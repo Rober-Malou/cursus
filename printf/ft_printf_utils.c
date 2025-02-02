@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 01:34:56 by robenite          #+#    #+#             */
-/*   Updated: 2025/01/20 21:22:22 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/02 02:20:54 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ int	ft_putstr_ish_fd(char *s, int fd)
 {
 	int	len;
 
+	len = 0;
 	if (!s)
-		len += ft_putstr_ish_fd("NULL", 1);
+		len += ft_putstr_ish_fd("(null)", 1);
 	else
 	{
 		len = ft_strlen(s);
@@ -68,4 +69,15 @@ int	ft_putnbr_ish_fd(int n, int fd)
 	c = (n % 10) + '0';
 	count += write(fd, &c, 1);
 	return (count);
+}
+
+int	hexa_p(unsigned	long args, char *base)
+{
+	int	sum;
+
+	sum = 0;
+	if (args >= 16)
+		sum += hexa_p(args / 16, base);
+	sum += ft_putchar_ish_fd(base[args % 16], 1);
+	return (sum);
 }
