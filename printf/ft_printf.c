@@ -6,7 +6,7 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 21:31:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/02 02:33:57 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/05 20:56:52 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	format_chek(char format, va_list args);
 static int	pointer_f(unsigned long args, char *base);
-static int	hexa_f(unsigned int args, char *base);
 static int	ft_putnbr_ish_no_sign_fd(unsigned int args);
+static int	hexa_p(unsigned long args, char *base);
 
 int	ft_printf(char const *text, ...)
 {
@@ -51,18 +51,15 @@ static int	format_chek(char format, va_list args)
 	else if (format == 's')
 		r_counter = ft_putstr_ish_fd(va_arg(args, char *), 1);
 	else if (format == 'p')
-		r_counter = pointer_f(va_arg(args, unsigned long),
-				"0123456789abcdef");
+		r_counter = pointer_f(va_arg(args, unsigned long), "0123456789abcdef");
 	else if (format == 'd' || format == 'i')
 		r_counter = ft_putnbr_ish_fd(va_arg(args, int), 1);
 	else if (format == 'u')
 		r_counter = ft_putnbr_ish_no_sign_fd(va_arg(args, unsigned int));
 	else if (format == 'x')
-		r_counter = hexa_f(va_arg(args, unsigned long),
-				"0123456789abcdef");
+		r_counter = hexa_f(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (format == 'X')
-		r_counter = hexa_f(va_arg(args, unsigned long),
-				"0123456789ABCDEF");
+		r_counter = hexa_f(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (format == '%')
 		r_counter = ft_putchar_ish_fd('%', 1);
 	return (r_counter);
@@ -83,13 +80,13 @@ static int	pointer_f(unsigned long args, char *base)
 	return (sum);
 }
 
-static int	hexa_f(unsigned int args, char *base)
+static int	hexa_p(unsigned long args, char *base)
 {
 	int	sum;
 
 	sum = 0;
 	if (args >= 16)
-		sum += hexa_f(args / 16, base);
+		sum += hexa_p(args / 16, base);
 	sum += ft_putchar_ish_fd(base[args % 16], 1);
 	return (sum);
 }
