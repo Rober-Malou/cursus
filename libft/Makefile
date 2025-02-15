@@ -1,8 +1,9 @@
-SRC	= $(addsuffix .c, get_next_line) $(addprefix ft_, $(addsuffix .c, atoi bzero calloc isalnum isalpha \
-	isascii isdigit isprint itoa memchr memcmp memcpy \
-	memmove memset putchar_fd putendl_fd putnbr_fd putstr_fd split strchr \
-	strchr strdup striteri strjoin strlcat strlcpy strlen strmapi strncmp \
-	strnstr strrchr strtrim substr tolower toupper printf printf_utils))
+SRC	= $(addsuffix .c, get_next_line) $(addprefix ft_, $(addsuffix .c, atoi \
+	bzero calloc isalnum isalpha isascii isdigit isprint itoa memchr memcmp \
+	memcpy memmove memset putchar_fd putendl_fd putnbr_fd putstr_fd split \
+	strchr strchr strdup striteri strjoin strlcat strlcpy strlen strmapi \
+	strncmp strnstr strrchr strtrim substr tolower toupper printf \
+	printf_utils))
 
 BONUS_SRC= $(addprefix ft_, $(addsuffix _bonus.c, lstnew lstadd_front lstsize \
 	lstlast lstadd_back lstdelone lstclear lstiter lstmap))
