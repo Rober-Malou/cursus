@@ -1,7 +1,7 @@
 # ✅ Main Checklist
 
-- [ ] Decide if you are going to do your project using chained lists or using tables
-- [ ] Handle the arguments you are given in input
+- [ x] Decide if you are going to do your project using chained lists or using tables
+- [x ] Handle the arguments you are given in input
   - [ ] *(If you choose radix sort, normalize your data!)*
 
 ---

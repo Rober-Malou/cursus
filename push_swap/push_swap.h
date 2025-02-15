@@ -6,12 +6,12 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 18:42:53 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/13 19:31:06 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/15 04:05:45 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <./libft.h>
+# include <./libft/libft.h>
 
 #endif
