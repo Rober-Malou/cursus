@@ -1,4 +1,4 @@
-SRC	= $(addsuffix .c, push_swap)
+SRC	= $(addsuffix .c, main set_colum cheks)
 
 OBJS := $(SRC:%.c=%.o)
 

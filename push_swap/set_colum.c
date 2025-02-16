@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   set_colum.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 21:33:23 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/15 04:51:53 by robenite         ###   ########.fr       */
+/*   Created: 2025/02/15 19:30:34 by robenite          #+#    #+#             */
+/*   Updated: 2025/02/16 03:32:31 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+t_list	*set(t_list *colum_a, int argc, char **argv)
 {
-	int		n;
-	t_list	*head;
+	int	n;
+	int	*num;
 
 	n = 1;
-	head = NULL;
 	while (n < argc)
 	{
-		if (!head)
-			head = ft_lstnew(argv[n]);
+		num = malloc(sizeof(int));
+		if (!num)
+			return (NULL);
+		*num = ft_atoi(argv[n]);
+		if (!colum_a)
+			colum_a = ft_lstnew(num);
 		else
-			ft_lstadd_back(&head, ft_lstnew(argv[n]));
+			ft_lstadd_back(&colum_a, ft_lstnew(num));
 		n++;
 	}
-	t_list *current = head;
-    while (current)
-    {
-        ft_printf("%s\n", (char *)current->content);
-        current = current->next;
-    }
-	return (0);
+	return (colum_a);
 }
