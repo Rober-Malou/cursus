@@ -6,11 +6,11 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 21:37:59 by robenite          #+#    #+#             */
-/*   Updated: 2024/10/31 01:11:14 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/17 02:00:06 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// It breaks a string into several pieces by a character and sabe them in a
+// It breaks a string into several pieces by a character and save them in a
 // matrix
 #include "libft.h"
 

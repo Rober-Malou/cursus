@@ -6,13 +6,13 @@
 /*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 19:30:34 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/16 03:32:31 by robenite         ###   ########.fr       */
+/*   Updated: 2025/02/17 01:37:09 by robenite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*set(t_list *colum_a, int argc, char **argv)
+t_list	*set(t_list *colum_a, int argc, char *argv)
 {
 	int	n;
 	int	*num;
