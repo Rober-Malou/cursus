@@ -1,7 +1,7 @@
 # ✅ Main Checklist
 
-- [x] Decide if you are going to do your project using chained lists or using tables
-- [x] Handle the arguments you are given in input
+- [X] Decide if you are going to do your project using chained lists or using tables
+- [] Handle the arguments you are given in input
   - [ ] *(If you choose radix sort, normalize your data!)*
 
 ---
@@ -10,11 +10,11 @@
 
 There are a lot of errors to handle in push_swap. Don't forget any of them!
 
-- [x] The program must work with several numerical arguments  
+- [] The program must work with several numerical arguments  
   ```
   ./push_swap 1 3 5 +9 20 -4 50 60 04 08
   ```
-- [x] The program also works if you receive a single character list as a parameter  
+- [] The program also works if you receive a single character list as a parameter  
   ```
   ./push_swap "3 4 6 8 9 74 -56 +495"
   ```

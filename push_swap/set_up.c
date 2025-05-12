@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cheks.c                                            :+:      :+:    :+:   */
+/*   set_up.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robenite <robenite@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 00:29:11 by robenite          #+#    #+#             */
-/*   Updated: 2025/02/16 22:49:24 by robenite         ###   ########.fr       */
+/*   Created: 2025/05/09 17:02:43 by malou             #+#    #+#             */
+/*   Updated: 2025/05/09 17:55:55 by malou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	cheks(char *argv)
+int	set_up(t_ps_node, int argv)
 {
-	int	flag;
-	int	count;
-
-	flag = 0;
-	count = 0;
+	int index = 0
 	while (argv)
-		flag += ft_isdigit(argv[count++]);
-	return (flag);
+		{
+			t_ps_node *nbr = argv;
+		}
 }

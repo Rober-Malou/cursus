@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ps_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malou <malou@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 21:37:59 by robenite          #+#    #+#             */
-/*   Updated: 2025/05/09 17:55:50 by malou            ###   ########.fr       */
+/*   Created: 2025/05/09 17:23:54 by malou             #+#    #+#             */
+/*   Updated: 2025/05/09 17:55:57 by malou            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// It breaks a string into several pieces by a character and save them in a
-// matrix
-#include "libft.h"
-
-// Free the memory tha was allocate in case it fails
+#include "push_swap.h"
 
 static void	ft_free_splits(char **splits, int o)
 {
@@ -22,8 +18,6 @@ static void	ft_free_splits(char **splits, int o)
 		free(splits[o]);
 	free(splits);
 }
-
-// Checks the length of every part of the split so the memory can be allocate
 
 static int	ft_word_len(const char *s, char c)
 {
@@ -34,8 +28,6 @@ static int	ft_word_len(const char *s, char c)
 		i++;
 	return (i);
 }
-
-// It checks in how many chunks the string is going to be broken into
 
 static int	ft_counting(const char *s, char c)
 {
@@ -53,7 +45,7 @@ static int	ft_counting(const char *s, char c)
 	return (num);
 }
 
-char	**ft_split_ish(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	int		n_words;
 	char	**splits;
